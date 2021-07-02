@@ -1,7 +1,7 @@
 import "./header.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Tab from "./Tab";
-import { headerData } from "./data.js";
+import { priceRanges } from "../../config/development.json";
 
 export default function Headers(props) {
   const handleTabChange = (tabIndex) => {
@@ -12,13 +12,13 @@ export default function Headers(props) {
       <br />
       <Container>
         <Row className="g-0">
-          {headerData.map((data, index) => (
+          {priceRanges.map((data, index) => (
             <Col key={index}>
               <Tab
                 range={data}
                 index={index}
                 selectedIndex={props.selectedIndex}
-                headerDatalength={headerData.length}
+                headerDatalength={priceRanges.length}
                 handleTabChange={handleTabChange}
               />
             </Col>

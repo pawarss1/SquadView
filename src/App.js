@@ -1,11 +1,12 @@
 import "./styles.css";
 import Headers from "./Heading/Headers";
 import { useEffect, useState } from "react";
+import PlanRow from "./Body/PlanRow";
 
 export default function App() {
-  window.addEventListener("online", function (e) {
-    console.log("offline");
-  });
+  // window.addEventListener("online", function (e) {
+  //   console.log("offline");
+  // });
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <div>
@@ -13,6 +14,7 @@ export default function App() {
         selectedIndex={selectedIndex}
         setSelectedIndex={setSelectedIndex}
       />
+      <PlanRow selectedIndex={selectedIndex} />
     </div>
   );
 }
