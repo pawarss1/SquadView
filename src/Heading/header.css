@@ -1,0 +1,42 @@
+.cornerLeftDiv {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #d1d1d1;
+  background-color: #f7f7f7;
+  height: 60px;
+  cursor: pointer;
+}
+
+.cornerRightDiv {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid #d1d1d1;
+  height: 60px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.innerDivs {
+  border: 1px solid #d1d1d1;
+  height: 60px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.selectedTab {
+  background-color: #5a6f90;
+}
+
+.selectedTabDetail {
+  color: #d2d7e1 !important;
+  text-align: center;
+  margin-top: 3vh;
+  font-weight: 650;
+}
+
+.rangeCls {
+  color: #4c596d;
+  text-align: center;
+  margin-top: 3vh;
+  font-weight: 650;
+}
