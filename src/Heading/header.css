@@ -30,13 +30,15 @@
 .selectedTabDetail {
   color: #d2d7e1 !important;
   text-align: center;
-  margin-top: 3vh;
+  margin-top: 1vh;
   font-weight: 650;
+  font-size: 24px;
 }
 
 .rangeCls {
   color: #4c596d;
   text-align: center;
-  margin-top: 3vh;
+  margin-top: 1vh;
   font-weight: 650;
+  font-size: 24px;
 }

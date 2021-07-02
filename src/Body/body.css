@@ -2,7 +2,20 @@
   height: auto;
   background-color: #5a6f90;
   margin-top: 10vh;
-  min-height: 10vh;
+  min-height: 7vh;
+}
+
+.mostPopularDiv {
+  height: auto;
+  background-color: #ee5a36;
+  min-height: 7vh;
+  position: absolute;
+  width: 18vw;
+}
+
+.mostPopularText {
+  color: #ffffff;
+  text-align: center;
 }
 
 .displayPlanDiv {
@@ -10,7 +23,8 @@
   font-weight: 600;
   font-family: "Gill Sans", sans-serif;
   text-align: center;
-  padding-top: 2vh;
+  padding-top: 1.5vh;
+  font-size: 24px;
 }
 
 .displayPricePerQualifiedLeadCls {
@@ -20,13 +34,13 @@
 
 .innerPlanDetails {
   text-align: center;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
 }
 
 .innerPlanNumberDetails {
   text-align: center;
-  margin-top: -4vh;
+  margin-top: -1vh;
 }
 
 .seperatorCls {

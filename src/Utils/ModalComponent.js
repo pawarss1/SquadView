@@ -1,6 +1,6 @@
 import "./utility.css";
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 
 export default function ModalComponent(props) {
   const handleClose = () => props.setShowModal(false);
@@ -9,6 +9,7 @@ export default function ModalComponent(props) {
     <>
       <Modal show={props.showModal} onHide={handleClose}>
         <Modal.Header
+          closeButton
           style={{
             display: "flex",
             justifyContent: "center",
@@ -17,12 +18,30 @@ export default function ModalComponent(props) {
         >
           <Modal.Title>Get Started with SquadVoice</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <Modal.Body>
+          <div>
+            <h5>Plan Selected: "Qualified 40"</h5>
+            Name
+            <Container>
+              <Row>
+                <Col>
+                  <input className="nameInput" />
+                </Col>
+              </Row>
+              <Row>
+                <Col sm="6" md="6">
+                  E-mail Address
+                  <input />
+                </Col>
+                <Col sm="6" md="6">
+                  Phone No.
+                  <input />
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          <Button>Submit</Button>
+        </Modal.Body>
       </Modal>
     </>
   );

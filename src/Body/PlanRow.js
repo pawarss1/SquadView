@@ -13,7 +13,12 @@ export default function PlanRow(props) {
           {configData[configData.priceRanges[props.selectedIndex]].map(
             (data, index) => (
               <Col key={index}>
-                <Plan data={data} />
+                {/* {index === configData.popularPlanIndex ? (
+                  <div className="mostPopularDiv">
+                    <p className="mostPopularText">Most Popular!</p>
+                  </div>
+                ) : null} */}
+                <Plan data={data} index={index} />
               </Col>
             )
           )}
