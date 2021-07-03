@@ -60,3 +60,43 @@
 .normal-background {
   background-color: #ffffff;
 }
+
+.enterprise-background {
+  min-height: 37.6vh;
+  background-color: #f7f7f7;
+}
+
+.enterprise-text {
+  text-align: center;
+  padding: 12vh 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1200px) {
+  .enterprise-background {
+    min-height: 42vh;
+    background-color: #f7f7f7;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .enterprise-background {
+    min-height: 48vh;
+    background-color: #f7f7f7;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .enterprise-background {
+    min-height: 36.7vh;
+    background-color: #f7f7f7;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .enterprise-background {
+    min-height: 36.4vh;
+    background-color: #f7f7f7;
+  }
+}

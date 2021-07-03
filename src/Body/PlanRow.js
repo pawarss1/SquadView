@@ -1,8 +1,8 @@
 import "./body.css";
-import { useEffect } from "react";
 import configData from "../../config/development.json";
 import { Container, Row, Col } from "react-bootstrap";
 import Plan from "./Plan";
+import Enterprise from "./Enterprise";
 
 export default function PlanRow(props) {
   return (
@@ -17,6 +17,9 @@ export default function PlanRow(props) {
               </Col>
             )
           )}
+          <Col>
+            <Enterprise data={configData.enterprisePlan} />
+          </Col>
         </Row>
       </Container>
     </div>

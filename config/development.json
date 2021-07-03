@@ -177,6 +177,15 @@
       "finalPackagePrice": "$10,159"
     }
   ],
+  "enterprisePlan": {
+    "plan": "Enterprise",
+    "buttonText": "Get in Touch",
+    "qualifiedLeadsPerMonth": "NA",
+    "pricePerLiveTransfer": "NA",
+    "totalQualifiedLeadPrice": "NA",
+    "totalPlatformPrice": "NA",
+    "finalPackagePrice": "NA"
+  },
   "leadSources": ["Zillow", "Realtor", "Ylopo", "Others"],
   "sources": ["Google", "Facebook", "Email", "Friends", "Real Closers"]
 }
