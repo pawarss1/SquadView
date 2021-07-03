@@ -6,7 +6,7 @@
 
 .mostPopularDiv {
   height: auto;
-  background-color: #ee5a36;
+  background-color: rgb(255, 94, 0);
   min-height: 7vh;
   margin-top: 7vh;
 }
@@ -36,6 +36,7 @@
 
 .innerPlanNumberDetails {
   margin-top: -1vh;
+  font-size: 22px;
 }
 
 .separatorGrid {

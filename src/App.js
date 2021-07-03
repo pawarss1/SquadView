@@ -7,7 +7,17 @@ export default function App() {
   // window.addEventListener("online", function (e) {
   //   console.log("offline");
   // });
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(2);
+
+  useEffect(() => {
+    const persistentSelectedIndex = +localStorage.getItem("selectedIndex");
+    if (persistentSelectedIndex) {
+      setSelectedIndex(persistentSelectedIndex);
+    } else {
+      setSelectedIndex(2);
+    }
+  }, []);
+
   return (
     <div>
       <Headers

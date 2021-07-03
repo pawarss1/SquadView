@@ -54,7 +54,9 @@ export default function Form(props) {
       onSubmit={(event) => {
         event.preventDefault();
         if (!formData.biggestLeadSources.length || !formData.hearAboutUs) {
-          // As all the fields are required, <form> is taking care of other required validations
+          /*  As all the fields are required, <form> is taking care of other required validations, 
+              this condition ensures that biggestLeadSources and hearAboutUs fields are not empty
+          */
           setFieldsMissingError(true);
           return;
         }
@@ -63,7 +65,9 @@ export default function Form(props) {
     >
       <div>
         <Container>
-          <h5>Plan Selected: {props.planSelected}</h5>
+          <h5>
+            <b>Plan Selected:</b> {props.planSelected}
+          </h5>
           <Row>
             <Col>
               <Label text="Name" />
@@ -182,8 +186,12 @@ export default function Form(props) {
             </Col>
           </Row>
           {fieldsMissingError && <Error error="Required fields missing!" />}
+          <Row>
+            <Col>
+              <input type="submit" className="submit-btn" />
+            </Col>
+          </Row>
         </Container>
-        <input type="submit" />
       </div>
     </form>
   );

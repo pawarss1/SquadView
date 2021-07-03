@@ -6,7 +6,9 @@ import { priceRanges } from "../../config/development.json";
 export default function Headers(props) {
   const handleTabChange = (tabIndex) => {
     props.setSelectedIndex(tabIndex);
+    localStorage.setItem("selectedIndex", tabIndex);
   };
+
   return (
     <div>
       <br />

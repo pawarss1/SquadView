@@ -13,7 +13,9 @@ export default function ModalComponent(props) {
         dialogClassName="modal-50w"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Get Started with SquadVoice</Modal.Title>
+          <Modal.Title>
+            <b>Get Started with SquadVoice</b>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form planSelected={props.planSelected} />

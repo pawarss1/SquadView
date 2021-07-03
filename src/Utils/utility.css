@@ -99,3 +99,19 @@ input[type="number"] {
 .error-cls {
   color: red;
 }
+
+.submit-btn {
+  background-color: rgb(255, 94, 0);
+  border: none;
+  border-radius: 3px;
+  min-height: 4vh;
+  color: #ffffff;
+}
+
+.title-div {
+  margin: auto;
+}
+
+.modal-header .btn-close {
+  margin: 0;
+}
