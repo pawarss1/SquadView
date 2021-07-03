@@ -115,3 +115,18 @@ input[type="number"] {
 .modal-header .btn-close {
   margin: 0;
 }
+
+.no-internet-screen {
+  background-color: #5a6f90;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+}
+
+.no-internet-text {
+  text-align: center;
+  padding: 50vh 0;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+}
