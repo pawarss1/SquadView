@@ -4,7 +4,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Input from "./Input";
 import Label from "./Label";
 import Select from "./Select";
-import Checkbox from "./Checkbox";
+import CheckboxMultiValued from "./CheckboxMultiValued";
+import CheckboxSingleValued from "./CheckboxSingleValued";
 import { leadSources, sources } from "../../config/development.json";
 
 export default function Form(props) {
@@ -16,9 +17,11 @@ export default function Form(props) {
     totalLeads: null,
     crm: null,
     numOfAgents: null,
-    biggestLeadSource: null,
+    biggestLeadSources: {}, // Can have multiple acceptable values. As the question is in Plural state.
     hearAboutUs: null
   });
+
+  const [checkedIndex, setCheckedIndex] = useState(null);
 
   const updateFormData = (fieldName, value) => {
     const curFormData = { ...formData };
@@ -26,8 +29,22 @@ export default function Form(props) {
     setFormData(curFormData);
   };
 
+  const updateLeadSources = (index) => {
+    const curFormData = { ...formData };
+    const biggestLeadSourcesTemp = { ...curFormData.biggestLeadSources };
+    if (biggestLeadSourcesTemp[leadSources[index]]) {
+      delete biggestLeadSourcesTemp[leadSources[index]];
+      // Remove the source from the list, as it already exists and the user has unchecked it.
+    } else {
+      biggestLeadSourcesTemp[leadSources[index]] = true;
+    }
+    curFormData.biggestLeadSources = biggestLeadSourcesTemp;
+    setFormData(curFormData);
+  };
+
   return (
     // Assumption 1.0- All the fields are required on the Form.
+
     <form
       onSubmit={(event) => {
         event.preventDefault();
@@ -44,6 +61,7 @@ export default function Form(props) {
                 required={true}
                 updateFormData={updateFormData}
                 fieldName="name"
+                type="text"
               />
             </Col>
           </Row>
@@ -54,6 +72,7 @@ export default function Form(props) {
                 required={true}
                 fieldName="email"
                 updateFormData={updateFormData}
+                type="email"
               />
             </Col>
             <Col>
@@ -62,6 +81,7 @@ export default function Form(props) {
                 required={true}
                 fieldName="phoneNo"
                 updateFormData={updateFormData}
+                type="number"
               />
             </Col>
           </Row>
@@ -119,10 +139,12 @@ export default function Form(props) {
               <div>
                 {leadSources.map((leadSource, index) => {
                   return (
-                    <Checkbox
+                    <CheckboxMultiValued
                       key={`${leadSource}${index}`}
                       text={leadSource}
-                      required={true}
+                      fieldName="biggestLeadSources"
+                      index={index}
+                      updateSelectedItem={updateLeadSources}
                     />
                   );
                 })}
@@ -135,10 +157,14 @@ export default function Form(props) {
               <div>
                 {sources.map((source, index) => {
                   return (
-                    <Checkbox
+                    <CheckboxSingleValued
                       key={`${source}${index}`}
                       text={source}
-                      required={true}
+                      fieldName="hearAboutUs"
+                      index={index}
+                      checkedFlag={checkedIndex === index}
+                      updateFormData={updateFormData}
+                      setCheckedIndex={setCheckedIndex}
                     />
                   );
                 })}
