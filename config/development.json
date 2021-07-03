@@ -176,5 +176,7 @@
       "totalPlatformPrice": "$799",
       "finalPackagePrice": "$10,159"
     }
-  ]
+  ],
+  "leadSources": ["Zillow", "Realtor", "Ylopo", "Others"],
+  "sources": ["Google", "Facebook", "Email", "Friends", "Real Closers"]
 }

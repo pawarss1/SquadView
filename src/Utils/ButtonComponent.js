@@ -4,10 +4,10 @@ export default function ButtonComponent(props) {
   return (
     <button
       type="button"
-      className={props.buttonClassList}
+      className={props.buttonClassList || null}
       onClick={props.onClickHandler}
     >
-      <p className={props.textClassList}>{props.text}</p>
+      <p className={props.textClassList || null}>{props.text}</p>
     </button>
   );
 }

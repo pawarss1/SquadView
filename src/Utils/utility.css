@@ -71,3 +71,15 @@ select.arrows {
   background-position: calc(100% - 0.5rem), 100% 0;
   background-repeat: no-repeat;
 }
+
+.inliner-cls {
+  display: flex;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.allign-sources-cls {
+  font-weight: 600;
+  margin-top: -0.4vh;
+  margin-left: 0.5vw;
+}
