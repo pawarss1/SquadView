@@ -24,6 +24,7 @@
 }
 
 .displayPricePerQualifiedLeadCls {
+  padding-top: 3vh;
   text-align: center;
   font-family: inherit;
 }
@@ -35,6 +36,12 @@
 
 .innerPlanNumberDetails {
   margin-top: -1vh;
+}
+
+.separatorGrid {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-bottom: 1vh;
 }
 
 .seperatorCls {

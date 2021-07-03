@@ -33,14 +33,18 @@ export default function Plan(props) {
           {props.data.pricePerLiveTransfer}
         </h1>
         <p className="innerPlanDetails text-align-cls">Per Qualified lead</p>
-        <div className="seperatorCls" />
+        <div className="separatorGrid">
+          <div className="seperatorCls" />
+        </div>
         <p className="innerPlanDetails text-align-cls">
           Qualified Leads Per Month
         </p>
         <p className="innerPlanNumberDetails text-align-cls">
           {props.data.qualifiedLeadsPerMonth}
         </p>
-        <div className="seperatorCls" />
+        <div className="separatorGrid">
+          <div className="seperatorCls" />
+        </div>
         <p className="innerPlanDetails text-align-cls">
           Platform Fee Per Month
         </p>
