@@ -1,41 +1,39 @@
 import "./utility.css";
 import { useState } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
+import Input from "./Input";
 
 export default function ModalComponent(props) {
   const handleClose = () => props.setShowModal(false);
 
   return (
     <>
-      <Modal show={props.showModal} onHide={handleClose}>
-        <Modal.Header
-          closeButton
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
+      <Modal
+        show={props.showModal}
+        onHide={handleClose}
+        dialogClassName="modal-40w"
+      >
+        <Modal.Header closeButton>
           <Modal.Title>Get Started with SquadVoice</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
-            <h5>Plan Selected: "Qualified 40"</h5>
-            Name
             <Container>
+              <h5>Plan Selected: "Qualified 40"</h5>
               <Row>
                 <Col>
-                  <input className="nameInput" />
+                  Name
+                  <Input />
                 </Col>
               </Row>
               <Row>
-                <Col sm="6" md="6">
+                <Col>
                   E-mail Address
-                  <input />
+                  <Input />
                 </Col>
-                <Col sm="6" md="6">
+                <Col>
                   Phone No.
-                  <input />
+                  <Input />
                 </Col>
               </Row>
             </Container>

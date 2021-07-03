@@ -30,3 +30,11 @@
 .text-align-cls {
   text-align: center !important;
 }
+
+.modal-40w {
+  min-width: 40%;
+}
+
+.modal-title {
+  margin: auto !important;
+}
