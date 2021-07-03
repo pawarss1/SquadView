@@ -2,6 +2,7 @@ import "./body.css";
 import { useState } from "react";
 import ModalComponent from "../Utils/ModalComponent";
 import { popularPlanIndex } from "../../config/development.json";
+import ButtonComponent from "../Utils/ButtonComponent";
 
 export default function Plan(props) {
   const [showModal, setShowModal] = useState(false);
@@ -51,10 +52,21 @@ export default function Plan(props) {
             {props.data.finalPackagePrice}/mo
           </p>
         </div>
+        <ButtonComponent
+          buttonClassList={`btn-props ${
+            props.index === popularPlanIndex
+              ? "btn-layout-popular"
+              : "btn-layout-normal"
+          }`}
+          textClassList={`${
+            props.index === popularPlanIndex
+              ? "button-color-popular"
+              : "button-color-normal"
+          } text-align-cls`}
+          text="Start Your Trial"
+          onClickHandler={handleShowModal}
+        />
       </div>
-      <button type="button" className="btn-props" onClick={handleShowModal}>
-        <p className="buttonDetails text-align-cls">Start Your Trial</p>
-      </button>
       <ModalComponent showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
