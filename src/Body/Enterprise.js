@@ -32,6 +32,7 @@ export default function Enterprise(props) {
         showModal={showModal}
         setShowModal={setShowModal}
         planSelected={props.data.plan}
+        text="Get Started with SquadVoice"
       />
     </div>
   );

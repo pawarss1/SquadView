@@ -14,7 +14,7 @@ export default function ModalComponent(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title>
-            <b>Get Started with SquadVoice</b>
+            <b>{props.text}</b>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
