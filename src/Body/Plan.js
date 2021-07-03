@@ -71,7 +71,11 @@ export default function Plan(props) {
           onClickHandler={handleShowModal}
         />
       </div>
-      <ModalComponent showModal={showModal} setShowModal={setShowModal} />
+      <ModalComponent
+        showModal={showModal}
+        setShowModal={setShowModal}
+        planSelected={props.data.plan}
+      />
     </div>
   );
 }
