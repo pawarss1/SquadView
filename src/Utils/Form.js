@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Input from "./Input";
 import Label from "./Label";
 import Select from "./Select";
+import Error from "./Error";
 import CheckboxMultiValued from "./CheckboxMultiValued";
 import CheckboxSingleValued from "./CheckboxSingleValued";
 import { leadSources, sources } from "../../config/development.json";
@@ -17,28 +18,32 @@ export default function Form(props) {
     totalLeads: null,
     crm: null,
     numOfAgents: null,
-    biggestLeadSources: {}, // Can have multiple acceptable values. As the question is in Plural state.
+    biggestLeadSources: [], // Can have multiple acceptable values. As the question is in Plural state.
     hearAboutUs: null
   });
 
   const [checkedIndex, setCheckedIndex] = useState(null);
+  const [fieldsMissingError, setFieldsMissingError] = useState(false);
 
   const updateFormData = (fieldName, value) => {
+    setFieldsMissingError(false);
     const curFormData = { ...formData };
     curFormData[fieldName] = value;
     setFormData(curFormData);
   };
 
   const updateLeadSources = (index) => {
+    setFieldsMissingError(false);
     const curFormData = { ...formData };
-    const biggestLeadSourcesTemp = { ...curFormData.biggestLeadSources };
-    if (biggestLeadSourcesTemp[leadSources[index]]) {
-      delete biggestLeadSourcesTemp[leadSources[index]];
+    const biggestLeadSourcesTemp = new Set(curFormData.biggestLeadSources);
+    // Used a set as the deletion and insertion operation takes constant time.
+    if (biggestLeadSourcesTemp.has(leadSources[index])) {
+      biggestLeadSourcesTemp.delete(leadSources[index]);
       // Remove the source from the list, as it already exists and the user has unchecked it.
     } else {
-      biggestLeadSourcesTemp[leadSources[index]] = true;
+      biggestLeadSourcesTemp.add(leadSources[index]);
     }
-    curFormData.biggestLeadSources = biggestLeadSourcesTemp;
+    curFormData.biggestLeadSources = [...biggestLeadSourcesTemp];
     setFormData(curFormData);
   };
 
@@ -48,6 +53,11 @@ export default function Form(props) {
     <form
       onSubmit={(event) => {
         event.preventDefault();
+        if (!formData.biggestLeadSources.length || !formData.hearAboutUs) {
+          // As all the fields are required, <form> is taking care of other required validations
+          setFieldsMissingError(true);
+          return;
+        }
         alert(JSON.stringify(formData));
       }}
     >
@@ -171,6 +181,7 @@ export default function Form(props) {
               </div>
             </Col>
           </Row>
+          {fieldsMissingError && <Error error="Required fields missing!" />}
         </Container>
         <input type="submit" />
       </div>
