@@ -1,7 +1,6 @@
 .planDivTop {
   height: auto;
   background-color: #5a6f90;
-  margin-top: 10vh;
   min-height: 7vh;
 }
 
@@ -9,20 +8,17 @@
   height: auto;
   background-color: #ee5a36;
   min-height: 7vh;
-  position: absolute;
-  width: 18vw;
+  margin-top: 7vh;
 }
 
 .mostPopularText {
   color: #ffffff;
-  text-align: center;
 }
 
 .displayPlanDiv {
   color: #d2d7e1;
   font-weight: 600;
   font-family: "Gill Sans", sans-serif;
-  text-align: center;
   padding-top: 1.5vh;
   font-size: 24px;
 }
@@ -33,13 +29,11 @@
 }
 
 .innerPlanDetails {
-  text-align: center;
   font-size: 15px;
   font-weight: 700;
 }
 
 .innerPlanNumberDetails {
-  text-align: center;
   margin-top: -1vh;
 }
 
@@ -57,6 +51,21 @@
 
 .buttonDetails {
   color: rgb(255, 94, 0);
-  text-align: center;
   margin-top: 1vh;
+}
+
+.text-align-cls {
+  text-align: center !important;
+}
+
+.display-hidden {
+  visibility: hidden;
+}
+
+.popular-background {
+  background-color: #f7f7f7;
+}
+
+.normal-background {
+  background-color: #ffffff;
 }
