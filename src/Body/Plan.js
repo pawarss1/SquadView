@@ -15,62 +15,78 @@ export default function Plan(props) {
       <div
         className={`${
           props.index === popularPlanIndex ? "" : "display-hidden"
-        } mostPopularDiv text-align-cls`}
+        } most-popular-div text-align-cls`}
       >
-        <p className="displayPlanDiv text-align-cls">Most Popular!</p>
+        <p className="display-heading-inside-div text-align-cls">
+          Most Popular!
+        </p>
       </div>
-      <div className="planDivTop">
-        <p className="displayPlanDiv text-align-cls">{props.data.plan}</p>
+      <div className="plan-div-heading">
+        <p className="display-heading-inside-div text-align-cls">
+          {props.data.plan}
+        </p>
       </div>
       <div
         className={
-          props.index === popularPlanIndex
+          props.index === popularPlanIndex || props.data.plan === "Enterprise"
             ? "popular-background"
             : "normal-background"
         }
       >
-        <h1 className="displayPricePerQualifiedLeadCls">
-          {props.data.pricePerLiveTransfer}
-        </h1>
-        <p className="innerPlanDetails text-align-cls">Per Qualified lead</p>
-        <div className="separatorGrid">
-          <div className="seperatorCls" />
+        <div
+          className={props.data.plan === "Enterprise" ? "display-hidden" : null}
+        >
+          <h1 className="display-price-per-qualified-lead">
+            {props.data.pricePerLiveTransfer}
+          </h1>
+          <p className="inner-plan-details text-align-cls">
+            Per Qualified lead
+          </p>
+          <div className="separator-grid">
+            <div className="seperator-border" />
+          </div>
         </div>
-        <p className="innerPlanDetails text-align-cls">
+        <p className="inner-plan-details text-align-cls">
           Qualified Leads Per Month
         </p>
-        <p className="innerPlanNumberDetails text-align-cls">
+        <p className="inner-plan-amount-details text-align-cls">
           {props.data.qualifiedLeadsPerMonth}
         </p>
-        <div className="separatorGrid">
-          <div className="seperatorCls" />
-        </div>
-        <p className="innerPlanDetails text-align-cls">
-          Platform Fee Per Month
-        </p>
-        <p className="innerPlanNumberDetails text-align-cls">
-          {props.data.totalPlatformPrice}
-        </p>
-        <div className="planDivTop">
-          <p className="displayPlanDiv text-align-cls">
-            {props.data.finalPackagePrice}/mo
+        <div
+          className={props.data.plan === "Enterprise" ? "display-hidden" : null}
+        >
+          <div className="separator-grid">
+            <div className="seperator-border" />
+          </div>
+          <p className="inner-plan-details text-align-cls">
+            Platform Fee Per Month
           </p>
+          <p className="inner-plan-amount-details text-align-cls">
+            {props.data.totalPlatformPrice}
+          </p>
+          <div className="plan-div-heading">
+            <p className="display-heading-inside-div text-align-cls">
+              {props.data.finalPackagePrice}/mo
+            </p>
+          </div>
         </div>
-        <ButtonComponent
-          buttonClassList={`btn-props ${
-            props.index === popularPlanIndex
-              ? "btn-layout-popular"
-              : "btn-layout-normal"
-          }`}
-          textClassList={`${
-            props.index === popularPlanIndex
-              ? "button-color-popular"
-              : "button-color-normal"
-          } text-align-cls`}
-          text="Start Your Trial"
-          onClickHandler={handleShowModal}
-        />
       </div>
+      <ButtonComponent
+        buttonClassList={`btn-props ${
+          props.index === popularPlanIndex
+            ? "btn-layout-popular"
+            : "btn-layout-normal"
+        }`}
+        textClassList={`${
+          props.index === popularPlanIndex
+            ? "button-color-popular"
+            : "button-color-normal"
+        } text-align-cls`}
+        text={
+          props.data.plan === "Enterprise" ? "Get in Touch" : "Start Your Trial"
+        }
+        onClickHandler={handleShowModal}
+      />
       <ModalComponent
         showModal={showModal}
         setShowModal={setShowModal}

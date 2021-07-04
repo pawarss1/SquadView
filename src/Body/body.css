@@ -1,21 +1,17 @@
-.planDivTop {
+.plan-div-heading {
   height: auto;
   background-color: #5a6f90;
   min-height: 7vh;
 }
 
-.mostPopularDiv {
+.most-popular-div {
   height: auto;
   background-color: rgb(255, 94, 0);
   min-height: 7vh;
   margin-top: 7vh;
 }
 
-.mostPopularText {
-  color: #ffffff;
-}
-
-.displayPlanDiv {
+.display-heading-inside-div {
   color: #ffffff;
   font-weight: 600;
   font-family: "Gill Sans", sans-serif;
@@ -23,29 +19,29 @@
   font-size: 19px;
 }
 
-.displayPricePerQualifiedLeadCls {
+.display-price-per-qualified-lead {
   padding-top: 3vh;
   text-align: center;
   font-family: inherit;
 }
 
-.innerPlanDetails {
+.inner-plan-details {
   font-size: 15px;
   font-weight: 700;
 }
 
-.innerPlanNumberDetails {
+.inner-plan-amount-details {
   margin-top: -1vh;
   font-size: 22px;
 }
 
-.separatorGrid {
+.separator-grid {
   margin-left: 1vw;
   margin-right: 1vw;
   margin-bottom: 1vh;
 }
 
-.seperatorCls {
+.seperator-border {
   border-bottom: 1px dotted black;
 }
 
@@ -59,44 +55,4 @@
 
 .normal-background {
   background-color: #ffffff;
-}
-
-.enterprise-background {
-  min-height: 37.6vh;
-  background-color: #f7f7f7;
-}
-
-.enterprise-text {
-  text-align: center;
-  padding: 12vh 0;
-  font-size: 19px;
-  font-weight: 700;
-}
-
-@media screen and (max-width: 1200px) {
-  .enterprise-background {
-    min-height: 42vh;
-    background-color: #f7f7f7;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .enterprise-background {
-    min-height: 48vh;
-    background-color: #f7f7f7;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .enterprise-background {
-    min-height: 36.7vh;
-    background-color: #f7f7f7;
-  }
-}
-
-@media screen and (max-width: 460px) {
-  .enterprise-background {
-    min-height: 36.4vh;
-    background-color: #f7f7f7;
-  }
 }
