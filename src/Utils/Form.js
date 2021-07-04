@@ -55,7 +55,7 @@ export default function Form(props) {
   return (
     /*  Assumption 1.0- All the fields are required on the Form.
         I reached out to Bhavya to ask for what picklist options should be present for the Picklist fields.
-        As I didnt get any response, so created some relevant options for picklist fields on my own.
+        As there was no response and the deadline was nearing, so created some relevant options for picklist fields on my own.
     */
 
     <form
@@ -75,7 +75,7 @@ export default function Form(props) {
       <div>
         <Container>
           <h5>
-            <b>Plan Selected:</b> {props.planSelected}
+            <b>Plan Selected:</b> {props.planSelected || "NA"}
           </h5>
           <Row>
             <Col>

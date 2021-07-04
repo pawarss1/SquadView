@@ -5,7 +5,7 @@ export default function Input(props) {
     <input
       type={props.type}
       className="name-input"
-      required={props.required}
+      required={props.required || true}
       onChange={(evt) => {
         props.updateFormData(props.fieldName, evt.target.value);
       }}

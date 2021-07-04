@@ -10,7 +10,7 @@ export default function CheckboxMultiValued(props) {
             type="checkbox"
             onChange={(evt) => props.updateSelectedItem(props.index)}
           />
-          <p className="allign-sources-cls">{props.text}</p>
+          <p className="allign-sources-cls">{props.text || "NA"}</p>
         </div>
       </label>
     </span>

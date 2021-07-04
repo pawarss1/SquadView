@@ -13,9 +13,9 @@ export default function CheckboxSingleValued(props) {
               props.setCheckedIndex(props.index);
               props.updateFormData(props.fieldName, props.text);
             }}
-            checked={props.checkedFlag}
+            checked={props.checkedFlag || false}
           />
-          <p className="allign-sources-cls">{props.text}</p>
+          <p className="allign-sources-cls">{props.text || "NA"}</p>
         </div>
       </label>
     </span>
