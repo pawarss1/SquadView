@@ -1,4 +1,4 @@
-.nameInput {
+.name-input {
   width: 100%;
   min-height: 5vh;
   border-radius: 4px;
@@ -41,7 +41,7 @@
   margin: auto !important;
 }
 
-.labelClass {
+.label-class {
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 1vh;

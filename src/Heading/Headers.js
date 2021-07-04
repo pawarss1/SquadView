@@ -4,6 +4,7 @@ import Tab from "./Tab";
 import { priceRanges } from "../../config/development.json";
 
 export default function Headers(props) {
+  // Using Local storage to maintain the persistent selected average home value
   const handleTabChange = (tabIndex) => {
     props.setSelectedIndex(tabIndex);
     localStorage.setItem("selectedIndex", tabIndex);

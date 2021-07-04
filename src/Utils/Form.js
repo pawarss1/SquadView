@@ -7,7 +7,12 @@ import Select from "./Select";
 import Error from "./Error";
 import CheckboxMultiValued from "./CheckboxMultiValued";
 import CheckboxSingleValued from "./CheckboxSingleValued";
-import { leadSources, sources } from "../../config/development.json";
+import {
+  leadSources,
+  sources,
+  listOfNumbersForPicklistFields,
+  listOfCRMS
+} from "../../config/development.json";
 
 export default function Form(props) {
   const [formData, setFormData] = useState({
@@ -48,7 +53,10 @@ export default function Form(props) {
   };
 
   return (
-    // Assumption 1.0- All the fields are required on the Form.
+    /*  Assumption 1.0- All the fields are required on the Form.
+        I reached out to Bhavya to ask for what picklist options should be present for the Picklist fields.
+        As I didnt get any response, so created some relevant options for picklist fields on my own.
+    */
 
     <form
       onSubmit={(event) => {
@@ -61,6 +69,7 @@ export default function Form(props) {
           return;
         }
         alert(JSON.stringify(formData));
+        props.closeModal();
       }}
     >
       <div>
@@ -103,7 +112,7 @@ export default function Form(props) {
             <Col>
               <Label text="Number of leads you generate in a month" />
               <Select
-                listOfOptions={["-", "0+", "20+", "40+", "60+", "100+"]}
+                listOfOptions={listOfNumbersForPicklistFields}
                 required={true}
                 fieldName="leadsGeneratedPerMonth"
                 updateFormData={updateFormData}
@@ -112,7 +121,7 @@ export default function Form(props) {
             <Col>
               <Label text="Total leads in your CRM" />
               <Select
-                listOfOptions={["-", "0+", "20+", "40+", "60+", "100+"]}
+                listOfOptions={listOfNumbersForPicklistFields}
                 required={true}
                 fieldName="totalLeads"
                 updateFormData={updateFormData}
@@ -123,15 +132,7 @@ export default function Form(props) {
             <Col>
               <Label text="Which CRM do you use?" />
               <Select
-                listOfOptions={[
-                  "-",
-                  "Salesforce",
-                  "Zendesk",
-                  "Pipedrive",
-                  "Zoho",
-                  "Nutshell",
-                  "Other"
-                ]}
+                listOfOptions={listOfCRMS}
                 required={true}
                 fieldName="crm"
                 updateFormData={updateFormData}
@@ -140,7 +141,7 @@ export default function Form(props) {
             <Col>
               <Label text="No. of Agents" />
               <Select
-                listOfOptions={["-", "0+", "20+", "40+", "60+", "100+"]}
+                listOfOptions={listOfNumbersForPicklistFields}
                 required={true}
                 fieldName="numOfAgents"
                 updateFormData={updateFormData}

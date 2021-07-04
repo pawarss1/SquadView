@@ -18,7 +18,7 @@ export default function ModalComponent(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form planSelected={props.planSelected} />
+          <Form planSelected={props.planSelected} closeModal={handleClose} />
         </Modal.Body>
       </Modal>
     </>

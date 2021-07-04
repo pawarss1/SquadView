@@ -1,34 +1,29 @@
-.cornerLeftDiv {
+.corner-left-div {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.home-value-container {
   border: 1px solid #d1d1d1;
   background-color: #f7f7f7;
   min-height: 80px;
   cursor: pointer;
 }
 
-.cornerRightDiv {
+.corner-right-div {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 1px solid #d1d1d1;
-  min-height: 80px;
-  background-color: #f7f7f7;
-  cursor: pointer;
 }
 
-.innerDivs {
-  border: 1px solid #d1d1d1;
-  min-height: 80px;
-  background-color: #f7f7f7;
-  cursor: pointer;
-}
-
-.selectedTab {
+.selected-tab {
   background-color: #5a6f90;
 }
 
-.selectedTabDetail {
+.selected-tab-detail {
   color: #ffffff !important;
+}
+
+.tab-inner-text-details {
   text-align: center;
   margin-top: 1vh;
   font-weight: 650;
@@ -36,11 +31,6 @@
   padding: 2vh 0;
 }
 
-.rangeCls {
+.tab-detail {
   color: #4c596d;
-  text-align: center;
-  margin-top: 1vh;
-  font-weight: 650;
-  font-size: 17px;
-  padding: 2vh 0;
 }
